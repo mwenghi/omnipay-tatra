@@ -2,11 +2,11 @@
 
 namespace Omnipay\CardPay\Message;
 
-use Omnipay\Common\Currency;
 use Omnipay\Core\Sign\DesSign;
 use Omnipay\Core\Sign\HmacSign;
 use Omnipay\Core\Sign\Aes256Sign;
 use Omnipay\Core\Message\AbstractRequest;
+use Omnipay\Currency;
 
 class PurchaseRequest extends AbstractRequest
 {
