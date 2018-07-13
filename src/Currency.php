@@ -2,7 +2,7 @@
 /**
  * Currency class
  */
-namespace Omnipay\Common;
+namespace Omnipay;
 /**
  * Currency class
  *
