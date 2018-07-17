@@ -48,4 +48,9 @@ class Gateway extends AbstractGateway
     {
         return $this->createRequest(\Omnipay\CardPay\Message\CompletePurchaseRequest::class, $parameters);
     }
+
+    public function acceptNotification(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\CardPay\Message\PurchaseNotifyRequest', $parameters);
+    }
 }
