@@ -47,7 +47,8 @@ class PurchaseNotifyResponse extends AbstractResponse implements NotificationInt
         ];
 
         $sign = new HmacVerify();
-        return $sign->verify(implode("", $stringToSign), $data["ECDSA"], $data["ECDSA_KEY"])
+        $publicKey = config("eshop.payment_cardpay.public_ecdsa")[$data["ECDSA_KEY"]];
+        return $sign->verify(implode("", $stringToSign), $data["ECDSA"], $publicKey)
                 && $data["RES"] == self::RESPONSE_STATUS_OK;
     }
 
